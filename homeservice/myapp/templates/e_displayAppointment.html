@@ -1,0 +1,139 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Table V05</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--===============================================================================================-->
+        <link rel="icon" type="image/png" href="{% static 'table/images/icons/favicon.ico' %}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'table/vendor/bootstrap/css/bootstrap.min.css' %}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css"
+            href="{% static 'table/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'table/vendor/animate/animate.css' %}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'table/vendor/select2/select2.min.css' %}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css"
+            href="{% static 'table/vendor/perfect-scrollbar/perfect-scrollbar.css' %}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'table/css/util.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'table/css/main.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'table/layout2.css' %}">
+
+        <!--===============================================================================================-->
+        <style>
+        </style>
+    </head>
+
+    <body style="overflow: hidden;">
+        <div class="wrapper row1">
+            <header id="header" class="hoc clear">
+                <!-- ################################################################################################ -->
+                <div id="logo" class="fl_left" style="position:relative;bottom:15px;z-index: 1;">
+                    <h1><a href="">HomeServices</a></h1>
+                    <h5 style="font-size:15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Because You Value Quality</h5>
+                </div>
+                <!-- ################################################################################################ -->
+                <nav id="" class="fl_right">
+                    <div class="fl_left">
+                        <ul class="nospace inline pushright">
+                            <li> <a href="/e_homepage/?e_name={{ e_name }}">Home</a></li>
+                            <li><a href="/e_pendingAppointment/?e_name={{ e_name }}">Pending Appointment</a></li>
+
+                            <li>
+                                <h8>{{ e_name  }}&nbsp;</h8><a href="/" style="border:2px rgb(103,90,80) solid;background-color:darkred;"> Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <!-- ################################################################################################ -->
+            </header>
+        </div>
+        <div class="limiter" style="background: -webkit-linear-gradient(-135deg, #a2a2a6, #0f0f0f); z-index:-2;">
+            <div class="container-table100">
+                <div class="wrap-table100">
+                    <div class="table100 ver1" style="background-color:#030303;">
+                        <div class="table100-firstcol" style="background-color: #030303;">
+                            <table>
+                                <thead>
+                                    <tr class="row100 head">
+                                        <th class="cell100 column1">Customer name</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for d in data %}
+                                    <tr class="row100 body">
+                                        <td class="cell100 column1">{{ d.c_name }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="wrap-table100-nextcols js-pscroll">
+                            <div class="table100-nextcols">
+                                <table>
+                                    <thead>
+                                        <tr class="row100 body ">
+                                            <th class="cell100 column2">Services</th>
+                                            <th class="cell100 column3">Problem</th>
+                                            <th class="cell100 column4">Date</th>
+                                            <th class="cell100 column5">Time</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for d in data %}
+                                        <tr class="row100 body">
+                                            <td class="cell100 column2">{{ d.service }}</td>
+                                            <td class="cell100 column3">{{ d.problem }}</td>
+                                            <td class="cell100 column4">{{ d.date }}</td>
+                                            <td class="cell100 column5">{{ d.time }}</td>
+                                                   </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h1
+                style="background-color:wheat;width:100%;text-align: center;position:absolute;top:18%;;color:#4e3914;font-size: 30px;">
+                Display Appointment</h1>
+        </div>
+        <!--===============================================================================================-->
+        <script src="{% static 'table/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+        <!--===============================================================================================-->
+        <script src="{% static 'table/vendor/bootstrap/js/popper.js' %}"></script>
+        <script src="{% static 'table/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+        <!--===============================================================================================-->
+        <script src="{% static 'table/vendor/select2/select2.min.js' %}"></script>
+        <!--===============================================================================================-->
+        <script src="{% static 'table/vendor/perfect-scrollbar/perfect-scrollbar.min.js' %}"></script>
+        <script>
+            $('.js-pscroll').each(function () {
+                var ps = new PerfectScrollbar(this);
+
+                $(window).on('resize', function () {
+                    ps.update();
+                })
+
+                $(this).on('ps-x-reach-start', function () {
+                    $(this).parent().find('.table100-firstcol').removeClass('shadow-table100-firstcol');
+                });
+
+                $(this).on('ps-scroll-x', function () {
+                    $(this).parent().find('.table100-firstcol').addClass('shadow-table100-firstcol');
+                });
+
+            });
+        </script>
+        <!--===============================================================================================-->
+        <script src="js/main.js"></script>
+    </body>
+</html>

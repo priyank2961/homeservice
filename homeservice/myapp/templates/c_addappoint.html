@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Login V1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/png" href="{% static 'images/icons/favicon.ico' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}"> 
+         <link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'layout/layout2.css' %}">
+    </head>
+
+    <body>
+        <div class="wrapper row1">
+            <header id="header" class="hoc clear">
+                <!-- ################################################################################################ -->
+                <div id="logo" class="fl_left" style="position:relative;bottom:15px;">
+                    <h1 style="color:white;"><a href="index.html">HomeServices</a></h1>
+                    <h5 style="font-size:15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Because You Value Quality</h5>
+                </div>
+                <!-- ################################################################################################ -->
+                <nav id="" class="fl_right">
+                    <div class="fl_left">
+                        <ul class="nospace inline pushright">
+                            <li> <a href="/c_homepage/?c_name={{ c_name }}">Home</a></li>
+<li>
+                            <a href="/c_displayappoint/?name={{ c_name }}">Display Appointment</a></li>
+    <li>                        <h8> {{c_name}}&nbsp;</h8><a href="/" style="border:2px rgb(103,90,80) solid;background-color:darkred;"> Logout</a>
+    </li>    
+    </ul>
+                    </div>
+                </nav>
+                <!-- ################################################################################################ -->
+            </header>
+        </div>
+
+        <div class="limiter">
+            <div class="container-login100" style="background: -webkit-linear-gradient(-135deg, #a2a2a6, #0f0f0f);">
+                <div class="wrap-login100" style="background-color: #1b1111;">
+                <div class="login100-form validate-form" style="position: relative;bottom:100px;left:210px;">    
+                    <form action="/c_selectServiceName/">
+                        <span class="login100-form-title" style="color:#57b846;">
+                            Add Appointment
+                        </span>
+                            <input type="hidden" name="c_name" value={{c_name}}>
+
+                        <div class="wrap-input100 validate-input" >
+                    <select class="input100" name="service"  onchange="this.form.submit()" style="-webkit-appearance: none;-moz-appearance: none;text-indent: 1px;text-overflow:'';">
+                        <option value="">Select Service</option>
+                        <option value="Carpenter" {% if service == "Carpenter" %} selected {% endif %}>Carpenter
+                        </option>
+                        <option value="Electrician"  {% if service == "Electrician" %} selected {% endif %}>
+                            Electrician</option>
+                        <option value="Interiorpainter" {% if service == "Interiorpainter" %} selected {% endif %}>Interior painter</option>
+                        <option value="Plumber" {% if service == "Plumber" %} selected {% endif %}>Plumber
+                        </option>
+                        <option value="Window Cleaner" {% if service == "Window Cleaner" %} selected {% endif %}>Window Cleaner</option>
+                    </select>
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                                <i class="fa fa-caret-square-o-down" style="position: relative;left:208px;" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                        </form>
+                        <form action="/c_date_time/" >
+                        <input type="hidden" name="c_name" value={{ c_name }}>
+                        <input type="hidden" value="{{service}}" name="service">
+
+                            <div class="wrap-input100 validate-input">
+                            <!-- <input class="input100" type="password" name="pass" placeholder="Password"> -->
+                                <select class="input100" name="name" id="name" style="-webkit-appearance: none;-moz-appearance: none;text-indent: 1px;text-overflow:'';">
+                                    {% for d in data %}
+                                    <option value="{{ d.name }}">{{ d.name }}</option>
+                                    {% endfor %}
+                                </select>
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                                <i class="fa fa-user-plus" style="position: relative;left:208px;" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                            <div class="wrap-input100 validate-input">
+                            <textarea name="problem" class="input100" id="problem" cols="30" rows="3" placeholder="Explain the Problem" style="padding-top:13px;"></textarea>
+
+                                </select>
+                                <span class="focus-input100"></span>
+                                <span class="symbol-input100">
+                                    <i class="fa  fa-question-circle" style="position: relative;left:208px;" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        <div class="container-login100-form-btn">
+                            <button class="login100-form-btn">
+                                Next
+                            </button>
+                        </div>
+
+
+                        <div class="text-center p-t-136">
+                        </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!--===============================================================================================-->
+        <script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+        <!--===============================================================================================-->
+        <script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
+        <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+        <!--===============================================================================================-->
+        <script src="{% static 'vendor/select2/select2.min.js' %}"></script>
+        <!--===============================================================================================-->
+        <script src="{% static 'vendor/tilt/tilt.jquery.min.js' %}"></script>
+        <script>
+            $('.js-tilt').tilt({
+                scale: 1.1
+            })
+        </script>
+        <!--===============================================================================================-->
+        <script src="{% static 'js/main.js' %}"></script>
+
+    </body>
+
+</html>

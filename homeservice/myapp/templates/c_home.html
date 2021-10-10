@@ -1,0 +1,224 @@
+{% load static %}
+<!DOCTYPE html>
+<!--
+Template Name: Lolwork
+Author: <a href="https://www.os-templates.com/">OS Templates</a>
+Author URI: https://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: https://www.os-templates.com/template-terms
+-->
+<html>
+
+    <head>
+        <title>HomeServices</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="icon" type="image/png" href="{% static 'table/images/icons/favicon.ico' %}">
+        <link href="{% static 'layout/layout2.css' %}" rel="stylesheet" type="text/css" media="all">
+    </head>
+
+    <body id="top">
+        <!-- ################################################################################################ -->
+        <!-- ################################################################################################ -->
+        <!-- ################################################################################################ -->
+        <!-- ################################################################################################ -->
+
+        <!-- ################################################################################################ -->
+
+        <!-- ################################################################################################ -->
+        <!-- ################################################################################################ -->
+        <!-- ################################################################################################ -->
+        <div class="wrapper row1">
+            <header id="header" class="hoc clear">
+                <!-- ################################################################################################ -->
+                <div id="logo" class="fl_left" style="position:relative;bottom:15px;">
+                    <h1><a href="">HomeServices</a></h1>
+                    <h5 style="font-size:15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Because You Value Quality</h5>
+                </div>
+                <nav id="" class="fl_right">
+                    <div class="fl_left">
+                        <ul class="nospace inline pushright">
+                            <li><a href="/c_addappoint/?c_name={{ name }}">Add Appointment</a></li>
+                            <li><a href="/c_displayappoint/?name={{ name }}">Display Appointment</a></li>
+                            <li>
+                                <h8>{{ name  }}&nbsp;</h8> <a href="/" style="border:2px rgb(103,90,80) solid;background-color:darkred;"> Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+        </div>
+        <!-- ################################################################################################ -->
+        <!-- ################################################################################################ -->
+        <!-- ################################################################################################ -->
+        <div class="wrapper bgded overlay"
+            style="background-image:url({% static 'images/demo/backgrounds/01.jpg' %});, background-size:cover;height: 91.5vh">
+            <div id="pageintro" class="hoc clear">
+                <!-- ################################################################################################ -->
+                <article>
+
+                    <h2 class="heading" style="color:orange;position: relative;left:70%;">Home Services</h2>
+
+                    <footer style="position: relative;top:60px;left:47%;"><a class="btn"
+                            href="/c_addappoint/?c_name={{ name }}">Add Appointment</a>
+                        <a class="btn" href="/c_displayappoint/?name={{ name }}"
+                            style="position:relative;left: 20%;">Display Appointment</a>
+                    </footer>
+                </article>
+                <!-- ################################################################################################ -->
+            </div>
+        </div>
+        <!-- ################################################################################################ -->
+        <!-- ################################################################################################ -->
+        <!-- ################################################################################################ -->
+        <div class="wrapper row3" style="background-color: antiquewhite;">
+            <main class="hoc container clear">
+                <!-- main body -->
+                <!-- ################################################################################################ -->
+                <div class="center btmspace-50">
+                    <h2 class="heading" style="font-size: 40px;">Few Services</h2>
+                </div>
+                <ul class="nospace group btmspace-50">
+
+                    <li class="one_third first">
+                        <article class="element" style="background-color: #000000e0;">
+                            <figure style="text-align:center;"><i><img
+                                        src="{% static 'images/demo/services/plumber.png' %}"></i>
+                                <!-- <figcaption><a class="btn small" href="#">More</a></figcaption> -->
+                            </figure>
+                            <div class="" style="">
+                                <h6 class="heading" style="text-align: center;color:#e6d6d6;">
+                                    <strong>Plumber</strong>
+                                </h6>
+                                <p style="text-align: center;color:#ffffffc2;">Assemble, install, or repair pipes,
+                                    fittings, or fixtures
+                                    of heating, water specifications or plumbing codes.</p>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="one_third">
+                        <article class="element" style="background-color: white;,border:2px solid #000000e0;">
+                            <figure style="text-align:center;"><i><img
+                                        src="{% static 'images/demo/services/electrician.png' %}"></i>
+                                <!-- <figcaption><a class="btn small" href="#">More</a></figcaption> -->
+                            </figure>
+                            <div class="">
+                                <h6 class="heading" style="text-align: center;">
+                                    <strong>Electrician</strong>
+                                </h6>
+                                <p style="text-align: center;">Electricians install and maintain the electrical and
+                                    power systems for
+                                    our homes, businesses, and factories</p>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="one_third">
+                        <article class="element" style="background-color: #000000e0;">
+                            <figure style="text-align:center;"><i><img
+                                        src="{% static 'images/demo/services/carpenter.png' %}"></i>
+                                <!-- <figcaption><a class="btn small" href="#">More</a></figcaption> -->
+                            </figure>
+                            <div class="">
+                                <h6 class="heading" style="text-align:center;color:#e6d6d6;">
+                                    <strong>Carpenter</strong>
+                                </h6>
+                                <p style="text-align: center;color:#ffffffc2;">Carpenters construct, repair, and install
+                                    building and
+                                    structures made from wood and other materials</p>
+                            </div>
+                        </article>
+                    </li>
+
+                </ul>
+                <!-- ################################################################################################ -->
+                <!-- / main body -->
+                <div class="clear"></div>
+            </main>
+        </div>
+        <div class="wrapper row4 bgded overlay" style="background-image:url('images/demo/backgrounds/03.png');">
+            <footer id="footer" class="hoc clear">
+                <!-- ################################################################################################ -->
+                <div class="one_quarter first">
+                    <h6 class="title">Libero semper nec</h6>
+                    <p>Eros et magna ut vitae faucibus dui nec fermentum mauris nunc molestie venenatis metus et
+                        porttitor nisi
+                        faucibus ut cras non sem facilisis.</p>
+                    <p>Hendrerit ligula ut blandit sem nulla non ipsum rutrum tempor dolor non faucibus eros cras
+                        imperdiet cursus
+                        sapien.</p>
+                </div>
+                <div class="one_quarter">
+                    <h6 class="title">Nisi ornare aliquet</h6>
+                    <ul class="nospace linklist contact">
+                        <li><i class="fa fa-map-marker"></i>
+                            <address>
+                                Street Name &amp; Number, Town, Postcode/Zip
+                            </address>
+                        </li>
+                        <li><i class="fa fa-phone"></i> +00 (123) 456 7890<br>
+                            +00 (123) 456 7890</li>
+                        <li><i class="fa fa-fax"></i> +00 (123) 456 7890</li>
+                        <li><i class="fa fa-envelope-o"></i> info@domain.com</li>
+                    </ul>
+                </div>
+                <div class="one_quarter">
+                    <h6 class="title">Donec at tellus eu</h6>
+                    <ul class="nospace linklist">
+                        <li><a href="#">Mauris in condimentum lacus</a></li>
+                        <li><a href="#">Sed hendrerit est praesent</a></li>
+                        <li><a href="#">Tempor dapibus enim phasellus</a></li>
+                        <li><a href="#">Convallis lectus a tristique</a></li>
+                        <li><a href="#">Lectus nisi sodales sem at</a></li>
+                    </ul>
+                </div>
+                <div class="one_quarter">
+                    <h6 class="title">ac urna morbi rutrum</h6>
+                    <ul class="nospace linklist">
+                        <li>
+                            <article>
+                                <h2 class="nospace font-x1"><a href="#">dignissim libero augue</a></h2>
+                                <time class="font-xs block btmspace-10" datetime="2045-04-06">Friday, 6<sup>th</sup>
+                                    April 2045</time>
+                                <p class="nospace">aenean non egestas urna curabitur vitae aliquam felis&hellip;</p>
+                            </article>
+                        </li>
+                        <li>
+                            <article>
+                                <h2 class="nospace font-x1"><a href="#">et nisl id pretium</a></h2>
+                                <time class="font-xs block btmspace-10" datetime="2045-04-05">Thursday, 5<sup>th</sup>
+                                    April 2045</time>
+                                <p class="nospace">eros vehicula eros nec lacinia sem tellus vel turpis vivamus&hellip;
+                                </p>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+                <!-- ################################################################################################ -->
+            </footer>
+        </div>
+        <!-- ################################################################################################ -->
+        <!-- ################################################################################################ -->
+        <!-- ################################################################################################ -->
+        <div class="wrapper row5">
+            <div id="copyright" class="hoc clear">
+                <!-- ################################################################################################ -->
+                <p class="fl_left">Copyright &copy; 2018 - All Rights Reserved - <a href="#">Domain Name</a></p>
+                <p class="fl_right">Template by <a target="_blank" href="https://www.os-templates.com/"
+                        title="Free Website Templates">OS Templates</a></p>
+                <!-- ################################################################################################ -->
+            </div>
+        </div>
+        <!-- ################################################################################################ -->
+        <!-- ################################################################################################ -->
+        <!-- ################################################################################################ -->
+        <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+        <!-- JAVASCRIPTS -->
+        <script src="{% static 'layout/scripts/jquery.min.js' %}"></script>
+        <script src="{% static 'layout/scripts/jquery.backtotop.js' %}"></script>
+        <script src="{% static 'layout/scripts/jquery.mobilemenu.js' %}"></script>
+        <!-- IE9 Placeholder Support -->
+        <script src="{% static 'layout/scripts/jquery.placeholder.min.js' %}"></script>
+        <!-- / IE9 Placeholder Support -->
+    </body>
+
+</html>

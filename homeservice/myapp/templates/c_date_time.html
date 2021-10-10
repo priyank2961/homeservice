@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Login V1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/png" href="{% static 'images/icons/favicon.ico' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'layout/layout2.css' %}">
+    </head>
+<style>
+</style>
+    <body>
+        <div class="wrapper row1">
+            <header id="header" class="hoc clear">
+                <!-- ################################################################################################ -->
+                <div id="logo" class="fl_left" style="position:relative;bottom:15px;">
+                    <h1 style="color:white;"><a href="index.html">HomeServices</a></h1>
+                    <h5 style="font-size:15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Because You Value Quality</h5>
+                </div>
+                <!-- ################################################################################################ -->
+                <nav id="" class="fl_right">
+                    <div class="fl_left">
+                        <ul class="nospace inline pushright">
+                            <li><i class="fa fa-sign-out"></i> <a href="/c_displayappoint/?name={{ c_name }}">Display
+                                    Appointment</a></li>
+                            <h8>{{c_name}}&nbsp;</h8><a href="/"
+                                style="border:2px rgb(103,90,80) solid;background-color:darkred;"> Logout</a>
+                        </ul>
+                    </div>
+                </nav>
+                <!-- ################################################################################################ -->
+            </header>
+        </div>
+
+        <div class="limiter">
+            <div class="container-login100" style="background: -webkit-linear-gradient(-135deg, #a2a2a6, #0f0f0f);">
+                <div class="wrap-login100" style="background-color: #1b1111;">
+                    <div class="login100-form validate-form" style="position: relative;bottom:100px;left:210px;">
+                        <form action="/c_selectDate/">
+                            <span class="login100-form-title" style="color:#57b846;">
+                                Add Appointment
+                            </span>
+                            <input type="hidden" name="c_name" value={{c_name}}>
+
+                            <div class="wrap-input100 validate-input">
+                    <input type="date" class="input100" name="date" value="{{ date }}" onchange="this.form.submit()" style="-webkit-appearance: none;">
+                                <span class="focus-input100"></span>
+                                <span class="symbol-input100">
+                                    <i class="" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                            <input type="hidden" name="name" value="{{ name }}">
+                            <input type="hidden" name="problem" value="{{ problem }}">
+                            <input type="hidden" name="service" value="{{ service }}">
+                            <input type="hidden" name="c_name" value="{{ c_name }}">
+
+                        </form>
+                        <form action="/c_submitAppointment/">
+        <input type="hidden" name="date" value="{{ date }}">
+        <input type="hidden" name="problem" value="{{ problem }}">
+        <input type="hidden" name="name" value="{{ name }}">
+        <input type="hidden" name="c_name" value="{{ c_name }}">
+        <input type="hidden" name="service" value="{{ service }}">
+
+                            <div class="wrap-input100 validate-input">
+                            <select name="time" id="" class="input100" style="-webkit-appearance: none;-moz-appearance: none;text-indent: 1px;text-overflow:'';">
+                                {% for i in schedule %}
+                                <option value="{{ i }}">{{ i }}</option>
+                                {% endfor %}
+                                </select>
+                                <span class="focus-input100"></span>
+                                <span class="symbol-input100">
+                                    <i class="fa fa-clock-o" style="position: relative;left:208px;" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                            <div class="container-login100-form-btn">
+                                <button class="login100-form-btn">
+                                    Submit
+                                </button>
+                            </div>
+
+
+                            <div class="text-center p-t-136">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!--===============================================================================================-->
+        <script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+        <!--===============================================================================================-->
+        <script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
+        <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+        <!--===============================================================================================-->
+        <script src="{% static 'vendor/select2/select2.min.js' %}"></script>
+        <!--===============================================================================================-->
+        <script src="{% static 'vendor/tilt/tilt.jquery.min.js' %}"></script>
+        <script>
+            $('.js-tilt').tilt({
+                scale: 1.1
+            })
+        </script>
+        <!--===============================================================================================-->
+        <script src="{% static 'js/main.js' %}"></script>
+
+    </body>
+
+</html>

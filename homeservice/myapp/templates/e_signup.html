@@ -1,0 +1,152 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Login V1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/png" href="{% static 'images/icons/favicon.ico' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+        <link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'layout/layout2.css' %}">
+        <!--===============================================================================================-->
+    </head>
+
+    <body>
+        <div class="wrapper row1">
+            <header id="header" class="hoc clear">
+                <!-- ################################################################################################ -->
+                <div id="logo" class="fl_left" style="position:relative;bottom:15px;">
+                    <h1 style="color:white;"><a href="index.html">HomeServices</a></h1>
+                    <h5 style="font-size:15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Because You Value Quality</h5>
+                </div>
+                <!-- ################################################################################################ -->
+                <nav id="" class="fl_right">
+                    <div class="fl_left">
+                        <ul class="nospace inline pushright">
+                            <li><i class="fa fa-sign-in"></i> <a href="/startpage/?actionname=login">Login</a></li>
+                            <li><i class="fa fa-user"></i> <a href="/startpage/?actionname=signup">Register</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <!-- ################################################################################################ -->
+            </header>
+        </div>
+
+        <div class="limiter">
+            <div class="container-login100" style="background: -webkit-linear-gradient(-135deg, #a2a2a6, #0f0f0f);">
+                <div class="wrap-login100" style="background-color: #1b1111;">
+                    <div class="login100-pic js-tilt" data-tilt>
+                        <img src="{% static 'images/img-01.png' %}" style="position: relative;top:10%;" alt="IMG">
+                    </div>
+
+                    <form class="login100-form validate-form" action="/e_saveData/">
+                        <span class="login100-form-title" style="color:#57b846;">
+                            Member Account
+                        </span>
+
+                        <div class="wrap-input100 validate-input">
+                            <input class="input100" type="text" name="name" placeholder="Enter Your Name">
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                            </span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                            <input class="input100" type="text" name="email" placeholder="Email ID">
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                            </span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input" data-validate="Password is required">
+                            <input class="input100" type="password" name="password" placeholder="Password">
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                                <i class="fa fa-lock" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                        <div class="wrap-input100 validate-input">
+                            <input class="input100" type="tel" name="contact" placeholder="Mobile no">
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                        <div class="wrap-input100 validate-input">
+                            <select class="input100" style="-webkit-appearance: none;-moz-appearance: none;text-indent: 1px;text-overflow:'';" name="working_category">
+                            <option value="" disabled >Select Category</option> 
+                            <option value="Carpenter">Carpenter</option>
+                            <option value="Electrician">Electrician</option>
+                            <option value="Interiorpainter">Interior painter</option>
+                            <option value="Plumber">Plumber</option>
+                            <option value="Window Cleaner">Window Cleaner</option>
+                            </select>
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                                <i class="fa fa-caret-square-o-down" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                        <div class="wrap-input100 validate-input">
+                            <input class="input100" type="number" name="experience" placeholder="Work of Experience">
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                            <i class=""></i>
+                            </span>
+                        </div>
+                        <div class="wrap-input100 validate-input">
+                            <textarea class="input100" style="padding-top: 12px;" type="number" name="address" placeholder="Current Address"></textarea>
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                                <i class="fa fa-address-card-o" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                        <div class="container-login100-form-btn">
+                            <button class="login100-form-btn">
+                                Signup
+                            </button>
+                        </div>
+
+
+                        <div class="text-center p-t-136">
+                            <a class="txt2" href="#">
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!--===============================================================================================-->
+        <script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+        <!--===============================================================================================-->
+        <script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
+        <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+        <!--===============================================================================================-->
+        <script src="{% static 'vendor/select2/select2.min.js' %}"></script>
+        <!--===============================================================================================-->
+        <script src="{% static 'vendor/tilt/tilt.jquery.min.js' %}"></script>
+        <script>
+            $('.js-tilt').tilt({
+                scale: 1.1
+            })
+        </script>
+        <!--===============================================================================================-->
+        <script src="{% static 'js/main.js' %}"></script>
+
+    </body>
+
+</html>
